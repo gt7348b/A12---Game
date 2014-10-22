@@ -68,13 +68,13 @@
         </div>
         <div class = 'opavatar'> Opponent Avatar
         </div>
-        <div class = 'opselector'> Opponent Selector
-          <section>
+        <div id = 'opselector'> Opponent Selector
+              <section>
                   <p>
                     <label for="opponent">
                       <span>Select Player:</span>
                       <select required name="opponent" id="opponent">
-                        <option value="">Please Select</option>
+                       <option value= ''>Please Select</option>
                         <option value="opponent1">Opponent1</option>
                         <option value="opponent2">Opponent2</option>
                         <option value="opponent3">Opponent3</option>
@@ -86,6 +86,23 @@
       </div>
 
     </div> <!-- This is container closing div -->
+
+     <script id='opselector' type='text/template'>
+              <section>
+                <p>
+                  <label for="opponent">
+                    <span>Select Player:</span>
+                    <select required name="opponent" id="opponent">
+                      <option value="">Please Select</option>
+                      <option value= <%= opponent1 %> <%= opponent1.name %> </option>
+                      <option value="opponent2">Opponent2</option>
+                      <option value="opponent3">Opponent3</option>
+                    </select>
+                  </label>
+                </p>
+              </section>
+    </script>
+
 
 
     <!-- build:js scripts/vendor.js -->

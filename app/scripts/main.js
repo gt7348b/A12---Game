@@ -48,3 +48,8 @@ var opponent3 = new Opponent({
     name: 'Leather Daddy',
     avatar: 'http://farm1.static.flickr.com/35/73622729_1fb6a7510b_m.jpg'
 })
+
+
+var player = $('#player').val();
+
+var opponent = $('#opponent').val();
