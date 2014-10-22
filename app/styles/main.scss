@@ -71,12 +71,12 @@ h5 {
     }
 
     .avatar{
-      background-color: #0f9d58;
+      position: relative; background-color: #0f9d58;
       height: 10em;
       width: 10em;
       border-radius:5em;
-
-
+      line-height: 10em;  //This helps me center the text
+      left: 35%;
     }
 
     .selector{
@@ -92,7 +92,7 @@ h5 {
 
     button {
       position: relative;
-      //top: 50%;
+      top: 100%;
       //left: 50%;
       padding: 4em;
       background: linear-gradient(135deg,  $accent2, #444);
@@ -100,7 +100,7 @@ h5 {
       border-radius: 100%;
       box-shadow: 2px 3px 5px transparentize($accent2, .8);
       outline: none;
-      transform: translate(-50%, -50%);
+      //transform: translate(-50%, -50%);
       .fa {
         font-size: 4.2vw;
         color: $accent;
@@ -131,12 +131,13 @@ h5 {
     }
 
     .opavatar{
+      position: relative;
       background-color: red;
       height: 10em;
       width: 10em;
       border-radius:5em;
-      justify-content:center;
-    align-content:center;
+      line-height: 10em;  //This helps me center the text
+      left: 35%;
     }
 
     .opselector{
