@@ -3,6 +3,11 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
+$primary: #555;
+$accent: darken($primary, 11%);
+$accent2: lighten($primary, 18%);
+
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
@@ -85,6 +90,33 @@ h5 {
   .button_area{
     @include span-columns(3);
 
+    button {
+      position: relative;
+      //top: 50%;
+      //left: 50%;
+      padding: 4em;
+      background: linear-gradient(135deg,  $accent2, #444);
+      border: 1.5em solid $accent;
+      border-radius: 100%;
+      box-shadow: 2px 3px 5px transparentize($accent2, .8);
+      outline: none;
+      transform: translate(-50%, -50%);
+      .fa {
+        font-size: 4.2vw;
+        color: $accent;
+        transition: all .35s ease;
+      }
+      &:hover {
+        background: linear-gradient(135deg,  #ff2247, #1e3f9f);
+        border-color: white;
+        & .fa {
+          color: white;
+          transform: scale(1.1);
+        }
+      }
+
+    }
+
   }
 
 
@@ -103,8 +135,8 @@ h5 {
       height: 10em;
       width: 10em;
       border-radius:5em;
-
-
+      justify-content:center;
+    align-content:center;
     }
 
     .opselector{
