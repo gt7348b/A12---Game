@@ -7,6 +7,8 @@ var Player = function(options){
   this.pname = options.name;
   this.pavatar = options.avatar;
   this.health = 100;
+  this.attack = function(attackee){
+    attackee.health = attackee.health - _.random(5, 10);
 }
 
 
@@ -14,6 +16,9 @@ var Opponent = function(options){
   this.oname = options.name;
   this.oavatar = options.avatar;
   this.health = 100;
+  this.attack = function(attackee){
+    attackee.health = attackee.health - _.random(5, 10);
+  };
 }
 
 
@@ -25,7 +30,7 @@ var player1 = new Player({
 })
 
 var player2 = new Player({
-    name: 'Runner',
+    name: 'Flight Attendant',
     avatar: 'http://slowbuddy.com/wp-content/gallery/cartoon-pictures/cartoon_kid_runner.jpg'
 })
 
@@ -35,7 +40,7 @@ var player3 = new Player({
 })
 
 var opponent1 = new Opponent({
-    name: 'Otter',
+    name: 'Bar Tender',
     avatar: 'http://fasab.files.wordpress.com/2013/01/cartoon-otter.gif'
 })
 
