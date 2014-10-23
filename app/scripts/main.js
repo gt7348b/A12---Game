@@ -56,6 +56,37 @@ var opponent3 = new Opponent({
 });
 
 
-var player = $('#player').val();
+var player, opponent;
 
-var opponent = $('#opponent').val();
+$('.player button').on('click', function(event){
+  event.preventDefault();
+
+  player = $('#player').val();
+
+  if (player === 'player1'){
+    player = player1;
+  } else if (player === 'player2'){
+    player = player2;
+  } else if (player === 'player3'){
+    player = player3;
+  }
+
+  console.log(player);
+});
+
+
+$('.opponent button').on('click', function(event){
+
+  opponent = $('#opponent').val();
+
+  if (opponent === 'opponent1'){
+    opponent = opponent1;
+  } else if (opponent === 'opponent2'){
+    opponent = opponent2;
+  } else if (opponent === 'opponent3'){
+    opponent = opponent3;
+  }
+
+  console.log(opponent);
+
+});
