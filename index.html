@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>A12</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <div class="title_box"> This is the title box
+
+    </div>
+
+    <div class='container'>
+
+      <!-- This section defines the player side -->
+
+      <div class = 'player'>
+        <div class ='life'>
+          <p class = 'pname'><span class = 'phealth'></span></p>
+        </div>
+        <div class = 'pavatar'>
+        </div>
+        <div class = 'selector'> Player Selector
+          <section>
+                  <p>
+                    <label for="player">
+                      <span>Select Player:</span>
+                      <select required name="player" id="player">
+                        <option value="">Please Select</option>
+                        <option value="player1">Player1</option>
+                        <option value="player2">Player2</option>
+                        <option value="player3">Player3</option>
+                      </select>
+                    </label>
+                  </p>
+                </section>
+                <section>
+                  <p class="btnCon">
+                    <button id="pbutton">SELECT PLAYER</button>
+                  </p>
+                </section>
+
+        </div>
+      </div>
+
+      <!-- This defines the action button -->
+
+      <div class = 'button_area'>
+        <button>Button</button>
+
+      </div>
+
+      <!-- This sectioni defines the opponent area -->
+
+      <div class = 'opponent'>
+        <div class ='oplife'>
+          <p class = 'oname'><span class = 'ohealth'></span></p>
+        </div>
+        <div class = 'opavatar'> </div>
+        <div id = 'opselector'> Opponent Selector
+              <section>
+                  <p>
+                    <label for="opponent">
+                      <span>Select Player:</span>
+                      <select required name="opponent" id="opponent">
+                        <option value= ''>Please Select</option>
+                        <option value="opponent1">Opponent1</option>
+                        <option value="opponent2">Opponent2</option>
+                        <option value="opponent3">Opponent3</option>
+                      </select>
+                    </label>
+                  </p>
+                </section>
+                <section>
+                  <p class="btnCon">
+                    <button id="obutton">SELECT BEAR</button>
+                  </p>
+                </section>
+        </div>
+      </div>
+
+    </div> <!-- This is container closing div -->
+
+    <div class = 'twin'>This is if the twinks win</div>
+    <div class = 'bwin'>This is if the bears win</div>
+
+    <script id='player_avatar' type='text/template'><!-- Players life template -->
+      <img src='<%= pavatar_img %>'/>
+    </script>
+
+    <script id='opponent_avatar' type='text/template'><!-- Players life template -->
+      <img src='<%= oavatar_img %>'/>
+    </script>
+
+
+    <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
