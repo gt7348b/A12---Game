@@ -34,7 +34,7 @@
       <div class = 'player'>
         <div class ='life'> Player's life
         </div>
-        <div class = 'avatar'> Player's Avatar
+        <div class = 'pavatar'>
         </div>
         <div class = 'selector'> Player Selector
           <section>
@@ -71,8 +71,7 @@
       <div class = 'opponent'>
         <div class ='oplife'> Opponent Life
         </div>
-        <div class = 'opavatar'> Opponent Avatar
-        </div>
+        <div class = 'opavatar'> </div>
         <div id = 'opselector'> Opponent Selector
               <section>
                   <p>
@@ -97,20 +96,12 @@
 
     </div> <!-- This is container closing div -->
 
-     <script id='opselector' type='text/template'>
-              <section>
-                <p>
-                  <label for="opponent">
-                    <span>Select Player:</span>
-                    <select required name="opponent" id="opponent">
-                      <option value="">Please Select</option>
-                      <option value= <%= opponent1 %> <%= opponent1.name %> </option>
-                      <option value="opponent2">Opponent2</option>
-                      <option value="opponent3">Opponent3</option>
-                    </select>
-                  </label>
-                </p>
-              </section>
+    <script id='player_avatar' type='text/template'><!-- Players life template -->
+      <img src='<%= pavatar_img %>'/>
+    </script>
+
+    <script id='opponent_avatar' type='text/template'><!-- Players life template -->
+      <img src='<%= oavatar_img %>'/>
     </script>
 
     <script id='player_life' type='text/template'><!-- Players life template -->

@@ -70,7 +70,7 @@ h5 {
       background-color: #666666;
     }
 
-    .avatar{
+    .pavatar{
       position: relative; background-color: #0f9d58;
       height: 10em;
       width: 10em;
@@ -132,9 +132,10 @@ h5 {
 
     .opavatar{
       position: relative;
-      background-color: red;
+      //background-color: red;
       height: 10em;
       width: 10em;
+      border: solid .1em black;
       border-radius:5em;
       line-height: 10em;  //This helps me center the text
       left: 35%;

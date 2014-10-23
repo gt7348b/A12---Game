@@ -22,6 +22,15 @@ var Opponent = function(options){
   };
 };
 
+//This sets up the templates to be used later
+
+var oavatar_img,
+    pavatar_img,
+    render_pavatar = _.template($('#player_avatar').html());
+    render_oavatar = _.template($('#opponent_avatar').html());
+
+
+
 
 // These are the players and opponents
 
@@ -56,7 +65,13 @@ var opponent3 = new Opponent({
 });
 
 
+// This starts the action
+
+
 var player, opponent;
+
+
+
 
 $('.player button').on('click', function(event){
   event.preventDefault();
@@ -70,6 +85,11 @@ $('.player button').on('click', function(event){
   } else if (player === 'player3'){
     player = player3;
   }
+
+  pavatar_img = player.pavatar;
+  console.log(pavatar_img);
+
+  $('.pavatar').append(render_pavatar(pavatar_img));
 
   console.log(player);
 });
@@ -86,6 +106,11 @@ $('.opponent button').on('click', function(event){
   } else if (opponent === 'opponent3'){
     opponent = opponent3;
   }
+
+  oavatar_img = opponent.oavatar;
+  console.log(oavatar_img);
+
+  $('.opavatar').append(render_oavatar(oavatar_img));
 
   console.log(opponent);
 
