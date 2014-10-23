@@ -92,15 +92,16 @@ $('.player button').on('click', function(event){
 
   pavatar_img = player.pavatar;
 
-  console.log(pavatar_img);
+  //console.log(pavatar_img);
 
   $('.pavatar').append(render_pavatar(pavatar_img));
 
-  console.log(player);
+  //console.log(player);
 });
 
 
 $('.opponent button').on('click', function(event){
+  event.preventDefault();
 
   opponent = $('#opponent').val();
 
@@ -120,5 +121,19 @@ $('.opponent button').on('click', function(event){
   $('.opavatar').append(render_oavatar(oavatar_img));
 
   console.log(opponent);
+
+});
+
+$('.button_area button').on('click', function(event){
+  event.preventDefault();
+
+    player.attack(opponent);
+    $('.ohealth').text(opponent.health);
+
+    if (opponent.health > 0){
+      opponent.attack(player);
+      $('.phealth').text(player.health);
+    }
+
 
 });
