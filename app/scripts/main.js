@@ -88,7 +88,10 @@ $('.player button').on('click', function(event){
     player = player3;
   }
 
+  $('.pname').prepend(player.pname).find('.phealth').text(player.health);
+
   pavatar_img = player.pavatar;
+
   console.log(pavatar_img);
 
   $('.pavatar').append(render_pavatar(pavatar_img));
@@ -108,6 +111,8 @@ $('.opponent button').on('click', function(event){
   } else if (opponent === 'opponent3'){
     opponent = opponent3;
   }
+
+  $('.oname').prepend(opponent.oname).find('.ohealth').text(opponent.health);
 
   oavatar_img = opponent.oavatar;
   console.log(oavatar_img);
