@@ -4,6 +4,7 @@
 // These are the constructors used in this script
 
 var Player = function(options){
+  options = options || {};
   this.pname = options.name;
   this.pavatar = options.avatar;
   this.health = 100;
@@ -14,6 +15,7 @@ var Player = function(options){
 
 
 var Opponent = function(options){
+  options = options || {};
   this.oname = options.name;
   this.oavatar = options.avatar;
   this.health = 100;

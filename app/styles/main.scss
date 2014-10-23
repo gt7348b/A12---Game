@@ -77,6 +77,8 @@ h5 {
       border-radius:5em;
       line-height: 10em;  //This helps me center the text
       left: 35%;
+      overflow: hidden;
+      border: solid .1em black;
     }
 
     .selector{
@@ -139,6 +141,7 @@ h5 {
       border-radius:5em;
       line-height: 10em;  //This helps me center the text
       left: 35%;
+      overflow: hidden;
     }
 
     .opselector{
