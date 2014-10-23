@@ -9,7 +9,8 @@ var Player = function(options){
   this.health = 100;
   this.attack = function(attackee){
     attackee.health = attackee.health - _.random(5, 10);
-}
+  };
+};
 
 
 var Opponent = function(options){
@@ -19,7 +20,7 @@ var Opponent = function(options){
   this.attack = function(attackee){
     attackee.health = attackee.health - _.random(5, 10);
   };
-}
+};
 
 
 // These are the players and opponents
@@ -27,32 +28,32 @@ var Opponent = function(options){
 var player1 = new Player({
     name: 'Hairdresser',
     avatar: 'http://adrianerdedi.com/wp-content/uploads/2010/04/will-fennellnew.jpg'
-})
+});
 
 var player2 = new Player({
     name: 'Flight Attendant',
     avatar: 'http://slowbuddy.com/wp-content/gallery/cartoon-pictures/cartoon_kid_runner.jpg'
-})
+});
 
 var player3 = new Player({
     name: 'Server at Joes',
     avatar: 'https://lh5.googleusercontent.com/-lmK3WLrOxh4/TW1smUNWWhI/AAAAAAAAAd8/CIa8e7Wr1do/s200/waiter.jpg'
-})
+});
 
 var opponent1 = new Opponent({
     name: 'Bar Tender',
     avatar: 'http://fasab.files.wordpress.com/2013/01/cartoon-otter.gif'
-})
+});
 
 var opponent2 = new Opponent({
     name: 'Lumberjack',
     avatar: 'http://1.bp.blogspot.com/_-CWxsJwZq0E/TSsNebqC-PI/AAAAAAAABhc/vziENTxCym8/s1600/BenLumberjack_clr.jpg'
-})
+});
 
 var opponent3 = new Opponent({
     name: 'Leather Daddy',
     avatar: 'http://farm1.static.flickr.com/35/73622729_1fb6a7510b_m.jpg'
-})
+});
 
 
 var player = $('#player').val();
