@@ -50,6 +50,11 @@
                     </label>
                   </p>
                 </section>
+                <section>
+                  <p class="btnCon">
+                    <input type="submit" id="pbutton" value="SELECT PLAYER">
+                  </p>
+                </section>
 
         </div>
       </div>
@@ -74,12 +79,17 @@
                     <label for="opponent">
                       <span>Select Player:</span>
                       <select required name="opponent" id="opponent">
-                       <option value= ''>Please Select</option>
+                        <option value= ''>Please Select</option>
                         <option value="opponent1">Opponent1</option>
                         <option value="opponent2">Opponent2</option>
                         <option value="opponent3">Opponent3</option>
                       </select>
                     </label>
+                  </p>
+                </section>
+                <section>
+                  <p class="btnCon">
+                    <input type="submit" id="obutton" value="SELECT OPPONENT">
                   </p>
                 </section>
         </div>
@@ -103,8 +113,13 @@
               </section>
     </script>
 
+    <script id='player_life' type='text/template'><!-- Players life template -->
+      <p class = 'plife'> <%= player.life %> </p>
+    </script>
 
-
+    <script id='opp_life' type='text/template'><!-- Players life template -->
+      <p class = 'olife'> <%= opponent.life %> </p>
+    </script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
