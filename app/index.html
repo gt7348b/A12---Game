@@ -98,6 +98,9 @@
 
     </div> <!-- This is container closing div -->
 
+    <div class = 'twin'>This is if the twinks win</div>
+    <div class = 'bwin'>This is if the bears win</div>
+
     <script id='player_avatar' type='text/template'><!-- Players life template -->
       <img src='<%= pavatar_img %>'/>
     </script>
@@ -106,13 +109,7 @@
       <img src='<%= oavatar_img %>'/>
     </script>
 
-    <script id='player_life' type='text/template'><!-- Players life template -->
-      <p class = 'plife'> <%= player.life %> </p>
-    </script>
 
-    <script id='opp_life' type='text/template'><!-- Players life template -->
-      <p class = 'olife'> <%= opponent.life %> </p>
-    </script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>

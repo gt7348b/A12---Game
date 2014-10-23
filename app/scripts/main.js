@@ -20,7 +20,7 @@ var Opponent = function(options){
   this.oavatar = options.avatar;
   this.health = 100;
   this.attack = function(attackee){
-    attackee.health = attackee.health - _.random(5, 10);
+    attackee.health = attackee.health - _.random(5, 20);
   };
 };
 
@@ -128,12 +128,19 @@ $('.button_area button').on('click', function(event){
   event.preventDefault();
 
     player.attack(opponent);
-    $('.ohealth').text(opponent.health);
+  //  $('.ohealth').text(opponent.health);
 
     if (opponent.health > 0){
       opponent.attack(player);
-      $('.phealth').text(player.health);
+      $('.ohealth').text(opponent.health);
+      } else if (opponent.health <=0){
+      $('.ohealth').text('0');
     }
 
+    if (player.health > 0){
+      $('.phealth').text(player.health);
+    } else {
+      $('.phealth').text('0');
+    }
 
 });
