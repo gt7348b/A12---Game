@@ -134,6 +134,7 @@ $('.button_area button').on('click', function(event){
       } else if (opponent.health <=0){
       $('.ohealth').text('0');
       $('.container').css('display', 'none');
+      $('.title_box').css('display', 'none');
       $('.twin').css('display', 'block');
     }
 
@@ -142,6 +143,7 @@ $('.button_area button').on('click', function(event){
     } else {
       $('.phealth').text('0');
       $('.container').css('display', 'none');
+      $('.title_box').css('display', 'none');
       $('.bwin').css('display', 'block');
     }
 
