@@ -64,6 +64,22 @@ h5 {
   letter-spacing: 1px;
 }
 
+.welcome_container{
+  @include outer-container;
+
+  .player_sel{
+    @include span-columns(5);
+  }
+
+  .welcome_button{
+    @include span-columns(2);
+  }
+
+  .opponent_sel{
+    @include span-columns(5);
+  }
+}
+
 .container {
   @include outer-container;
   $medium: new-breakpoint(max-width 750px 12);
