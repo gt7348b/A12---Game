@@ -75,7 +75,7 @@ var player, opponent;
 
 
 
-$('.player button').on('click', function(event){
+$('.welcome_button button').on('click', function(event){
   event.preventDefault();
 
   player = $('#player').val();
@@ -96,12 +96,7 @@ $('.player button').on('click', function(event){
 
   $('.pavatar').append(render_pavatar(pavatar_img));
 
-  //console.log(player);
-});
-
-
-$('.opponent button').on('click', function(event){
-  event.preventDefault();
+  console.log(player);
 
   opponent = $('#opponent').val();
 
@@ -122,6 +117,9 @@ $('.opponent button').on('click', function(event){
 
   console.log(opponent);
 
+  $('.container').css('display', 'block');
+  $('.welcome_container').css('display', 'none');
+
 });
 
 $('.button_area button').on('click', function(event){
@@ -135,12 +133,16 @@ $('.button_area button').on('click', function(event){
       $('.ohealth').text(opponent.health);
       } else if (opponent.health <=0){
       $('.ohealth').text('0');
+      $('.container').css('display', 'none');
+      $('.twin').css('display', 'block');
     }
 
     if (player.health > 0){
       $('.phealth').text(player.health);
     } else {
       $('.phealth').text('0');
+      $('.container').css('display', 'none');
+      $('.bwin').css('display', 'block');
     }
 
 });

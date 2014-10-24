@@ -19,6 +19,53 @@
 
     </div>
 
+    <div class = 'welcome_container'>
+      <div class = 'player_sel'>this is the player selection side
+
+          <section>
+            <p>
+              <label for="player">
+                <span>Select Your Twink!</span>
+                <select required name="player" id="player">
+                  <option value="">Please Select</option>
+                  <option value="player1">Hair Dresser</option>
+                  <option value="player2">Flight Attendant</option>
+                  <option value="player3">Server at Joe's</option>
+                </select>
+              </label>
+            </p>
+          </section>
+      </div>
+
+      <div class = 'welcome_button'>
+        <section>
+          <p class="btnCon">
+            <button id="button">SELECT PLAYERS!</button>
+          </p>
+        </section>
+      </div>
+
+      <div id = 'opselector' class = 'opponent_sel'> This is the opponent selection side
+        <section>
+          <p>
+            <label for="opponent">
+              <span>Select Your Bear!</span>
+              <select required name="opponent" id="opponent">
+                <option value= ''>Please Select</option>
+                <option value="opponent1">Bartender</option>
+                <option value="opponent2">Lumberjack</option>
+                <option value="opponent3">Leather Daddy</option>
+              </select>
+            </label>
+          </p>
+        </section>
+      </div>
+    </div> <!-- This is the closing of the welcome -->
+
+
+    </div>
+
+
     <div class='container'>
 
       <!-- This section defines the player side -->
@@ -28,27 +75,6 @@
           <p class = 'pname'><span class = 'phealth'></span></p>
         </div>
         <div class = 'pavatar'>
-        </div>
-        <div class = 'selector'> Player Selector
-          <section>
-                  <p>
-                    <label for="player">
-                      <span>Select Player:</span>
-                      <select required name="player" id="player">
-                        <option value="">Please Select</option>
-                        <option value="player1">Player1</option>
-                        <option value="player2">Player2</option>
-                        <option value="player3">Player3</option>
-                      </select>
-                    </label>
-                  </p>
-                </section>
-                <section>
-                  <p class="btnCon">
-                    <button id="pbutton">SELECT PLAYER</button>
-                  </p>
-                </section>
-
         </div>
       </div>
 
@@ -66,26 +92,7 @@
           <p class = 'oname'><span class = 'ohealth'></span></p>
         </div>
         <div class = 'opavatar'> </div>
-        <div id = 'opselector'> Opponent Selector
-              <section>
-                  <p>
-                    <label for="opponent">
-                      <span>Select Player:</span>
-                      <select required name="opponent" id="opponent">
-                        <option value= ''>Please Select</option>
-                        <option value="opponent1">Opponent1</option>
-                        <option value="opponent2">Opponent2</option>
-                        <option value="opponent3">Opponent3</option>
-                      </select>
-                    </label>
-                  </p>
-                </section>
-                <section>
-                  <p class="btnCon">
-                    <button id="obutton">SELECT BEAR</button>
-                  </p>
-                </section>
-        </div>
+
       </div>
 
     </div> <!-- This is container closing div -->
