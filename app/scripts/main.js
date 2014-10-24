@@ -88,15 +88,6 @@ $('.welcome_button button').on('click', function(event){
     player = player3;
   }
 
-  $('.pname').prepend(player.pname).find('.phealth').text(player.health);
-
-  pavatar_img = player.pavatar;
-
-  //console.log(pavatar_img);
-
-  $('.pavatar').append(render_pavatar(pavatar_img));
-
-  console.log(player);
 
   opponent = $('#opponent').val();
 
@@ -108,17 +99,33 @@ $('.welcome_button button').on('click', function(event){
     opponent = opponent3;
   }
 
-  $('.oname').prepend(opponent.oname).find('.ohealth').text(opponent.health);
+  if (opponent !== '' && player !== ''){
+    $('.pname').prepend(player.pname).find('.phealth').text(player.health);
 
-  oavatar_img = opponent.oavatar;
-  console.log(oavatar_img);
+    pavatar_img = player.pavatar;
 
-  $('.opavatar').append(render_oavatar(oavatar_img));
+    //console.log(pavatar_img);
 
-  console.log(opponent);
+    $('.pavatar').append(render_pavatar(pavatar_img));
 
-  $('.container').css('display', 'block');
-  $('.welcome_container').css('display', 'none');
+    console.log(player);
+
+    $('.oname').prepend(opponent.oname).find('.ohealth').text(opponent.health);
+
+    oavatar_img = opponent.oavatar;
+    console.log(oavatar_img);
+
+    $('.opavatar').append(render_oavatar(oavatar_img));
+
+    console.log(opponent);
+
+    $('.container').css('display', 'block');
+    $('.welcome_container').css('display', 'none');
+  } else {
+    window.alert('Please select both player!');
+
+  }
+
 
 });
 

@@ -74,6 +74,14 @@ h5 {
 
   .welcome_button{
     @include span-columns(2);
+
+    button {
+      @include margin (2em 0 0 0);
+      height: 7em;
+      width: 7em;
+      border-radius: 5em;
+    }
+
   }
 
   .opponent_sel{
