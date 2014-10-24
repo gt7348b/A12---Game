@@ -14,7 +14,18 @@ body {
   background-color: HSLA(203, 6%, 90%, 1);
   font-size: 62.5%;
   text-align: center;
+
+  .twin{
+    display: none;
+    height: 10em;
+  }
+
+  .bwin{
+    display: none;
+    height: 10em;
+  }
 }
+
 ul {
   margin: 0;
   padding: 0;
@@ -61,6 +72,7 @@ h5 {
   width: 100%;
   padding: 0 20px;
   position: relative;
+  //display: none;
 
   .player{
     @include span-columns(4.5);
@@ -119,9 +131,7 @@ h5 {
           transform: scale(1.1);
         }
       }
-
     }
-
   }
 
 
@@ -155,14 +165,16 @@ h5 {
     }
   }  // This closes the opponent side style
 
-.twin {
+div.twin {
   display: none;
-}
+  height: 10em;
+  }
 
 
-.bwin {
+div.bwin {
   display: none;
+  height: 10em;
 
-}
+  }
 
 }
