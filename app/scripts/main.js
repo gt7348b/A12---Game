@@ -75,7 +75,7 @@ var player, opponent;
 
 
 
-$('.player button').on('click', function(event){
+$('.welcome_button button').on('click', function(event){
   event.preventDefault();
 
   player = $('#player').val();
@@ -97,11 +97,6 @@ $('.player button').on('click', function(event){
   $('.pavatar').append(render_pavatar(pavatar_img));
 
   //console.log(player);
-});
-
-
-$('.opponent button').on('click', function(event){
-  event.preventDefault();
 
   opponent = $('#opponent').val();
 
