@@ -14,7 +14,18 @@ body {
   background-color: HSLA(203, 6%, 90%, 1);
   font-size: 62.5%;
   text-align: center;
+
+  .twin{
+    display: none;
+    height: 10em;
+  }
+
+  .bwin{
+    display: none;
+    height: 10em;
+  }
 }
+
 ul {
   margin: 0;
   padding: 0;
@@ -53,6 +64,22 @@ h5 {
   letter-spacing: 1px;
 }
 
+.welcome_container{
+  @include outer-container;
+
+  .player_sel{
+    @include span-columns(5);
+  }
+
+  .welcome_button{
+    @include span-columns(2);
+  }
+
+  .opponent_sel{
+    @include span-columns(5);
+  }
+}
+
 .container {
   @include outer-container;
   $medium: new-breakpoint(max-width 750px 12);
@@ -61,6 +88,7 @@ h5 {
   width: 100%;
   padding: 0 20px;
   position: relative;
+  display: none;
 
   .player{
     @include span-columns(4.5);
@@ -119,9 +147,7 @@ h5 {
           transform: scale(1.1);
         }
       }
-
     }
-
   }
 
 
@@ -155,14 +181,16 @@ h5 {
     }
   }  // This closes the opponent side style
 
-.twin {
+div.twin {
   display: none;
-}
+  height: 10em;
+  }
 
 
-.bwin {
+div.bwin {
   display: none;
+  height: 10em;
 
-}
+  }
 
 }
