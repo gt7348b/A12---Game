@@ -88,7 +88,7 @@ h5 {
   width: 100%;
   padding: 0 20px;
   position: relative;
-  //display: none;
+  display: none;
 
   .player{
     @include span-columns(4.5);
