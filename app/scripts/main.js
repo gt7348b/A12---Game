@@ -9,10 +9,10 @@ var Player = function(options){
   this.pavatar = options.avatar;
   this.health = 100;
   this.attack = function(attackee){
-    attackee.health = attackee.health - _.random(5, 15);
+    attackee.health = attackee.health - _.random(5, 10);
   };
   this.strong = function(attackee){
-    attackee.health = attackee.health - _.random(15, 25);
+    attackee.health = attackee.health - _.random(15, 20);
   };
 };
 
