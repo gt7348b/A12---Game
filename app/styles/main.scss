@@ -7,6 +7,7 @@ $primary: #555;
 $accent: darken($primary, 11%);
 $accent2: lighten($primary, 18%);
 
+img {max-width:100;};
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -66,14 +67,22 @@ h5 {
 
 .welcome_container{
   @include outer-container;
+  $medium: new-breakpoint(max-width 750px 12);
+  $mobile: new-breakpoint(max-width 600px 6);
   font-size: 2em;
 
   .player_sel{
     @include span-columns(5);
+    @include media($mobile) {
+      @include span-columns(6);
+    }
   }
 
   .welcome_button{
     @include span-columns(2);
+    @include media($mobile) {
+      @include span-columns(6);
+    }
 
     button {
       @include margin (2em 0 0 0);
@@ -86,6 +95,9 @@ h5 {
 
   .opponent_sel{
     @include span-columns(5);
+    @include media($mobile) {
+      @include span-columns(6);
+    }
   }
 }
 
@@ -102,6 +114,10 @@ h5 {
   .player{
     @include span-columns(4.5);
 
+    @include media($mobile) {
+      @include span-columns(6);
+    }
+
     .life{
       height: 3em;
       background-color: #666666;
@@ -112,9 +128,9 @@ h5 {
 
     .pavatar{
       position: relative; background-color: #0f9d58;
-      height: 10em;
-      width: 10em;
-      border-radius:5em;
+      height: 20em;
+      width: 20em;
+      border-radius:10em;
       line-height: 10em;  //This helps me center the text
       left: 35%;
       overflow: hidden;
@@ -131,6 +147,9 @@ h5 {
 
   .button_area{
     @include span-columns(3);
+    @include media($mobile) {
+      @include span-columns(6);
+    }
 
     button {
       position: relative;
@@ -142,6 +161,8 @@ h5 {
       border-radius: 100%;
       box-shadow: 2px 3px 5px transparentize($accent2, .8);
       outline: none;
+      color: white;
+      font-weight: bold;
       //transform: translate(-50%, -50%);
       .fa {
         font-size: 4.2vw;
@@ -164,6 +185,9 @@ h5 {
 
   .opponent{
     @include span-columns(4.5);
+    @include media($mobile) {
+      @include span-columns(6);
+    }
 
     .oplife{
       height: 3em;
@@ -176,10 +200,10 @@ h5 {
     .opavatar{
       position: relative;
       //background-color: red;
-      height: 10em;
-      width: 10em;
+      height: 20em;
+      width: 20em;
       border: solid .1em black;
-      border-radius:5em;
+      border-radius:10em;
       line-height: 10em;  //This helps me center the text
       left: 35%;
       overflow: hidden;

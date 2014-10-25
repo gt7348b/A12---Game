@@ -9,10 +9,7 @@ var Player = function(options){
   this.pavatar = options.avatar;
   this.health = 100;
   this.attack = function(attackee){
-    attackee.health = attackee.health - _.random(5, 10);
-  };
-  this.strong = function(attackee){
-    attackee.health = attackee.health - _.random(10, 20);
+    attackee.health = attackee.health - _.random(10, 15);
   };
 };
 
@@ -25,9 +22,6 @@ var Opponent = function(options){
   this.attack = function(attackee){
     attackee.health = attackee.health - _.random(5, 20);
   };
-  this.strong = function(attackee){
-    attackee.health = attackee.health - _.random(15, 25);
-  };
 };
 
 //This sets up the templates to be used later
@@ -36,6 +30,7 @@ var oavatar_img,
     pavatar_img,
     render_pavatar = _.template($('#player_avatar').html());
     render_oavatar = _.template($('#opponent_avatar').html());
+
 
 
 
@@ -53,7 +48,8 @@ var player2 = new Player({
 
 var player3 = new Player({
     name: 'Server at Joes',
-    avatar: 'https://lh5.googleusercontent.com/-lmK3WLrOxh4/TW1smUNWWhI/AAAAAAAAAd8/CIa8e7Wr1do/s200/waiter.jpg'
+    avatar: 'images/server.jpg'
+    //avatar: 'https://lh5.googleusercontent.com/-lmK3WLrOxh4/TW1smUNWWhI/AAAAAAAAAd8/CIa8e7Wr1do/s200/waiter.jpg'
 });
 
 var opponent1 = new Opponent({
@@ -62,20 +58,25 @@ var opponent1 = new Opponent({
 });
 
 var opponent2 = new Opponent({
-    name: 'Lumberjack',
-    avatar: 'http://1.bp.blogspot.com/_-CWxsJwZq0E/TSsNebqC-PI/AAAAAAAABhc/vziENTxCym8/s1600/BenLumberjack_clr.jpg'
+    //name: 'Lumberjack',
+    //avatar: 'http://1.bp.blogspot.com/_-CWxsJwZq0E/TSsNebqC-PI/AAAAAAAABhc/vziENTxCym8/s1600/BenLumberjack_clr.jpg'
+    name: 'Sailor',
+    avatar: 'images/sailor.jpg'
 });
 
 var opponent3 = new Opponent({
     name: 'Leather Daddy',
-    avatar: 'http://farm1.static.flickr.com/35/73622729_1fb6a7510b_m.jpg'
+    //avatar: 'http://farm1.static.flickr.com/35/73622729_1fb6a7510b_m.jpg'
+    avatar: 'images/daddy.jpg'
 });
 
 
-// This selects the players
+// This starts the action
 
 
 var player, opponent;
+
+
 
 
 $('.welcome_button button').on('click', function(event){
@@ -137,28 +138,11 @@ $('.welcome_button button').on('click', function(event){
 $('.button_area button').on('click', function(event){
   event.preventDefault();
 
-    var pattack_type = _.random (1, 2);
-    console.log(pattack_type);
-    console.log(opponent.health);
-
-    if (pattack_type === 1){
-      player.attack(opponent);
-    } else {
-      player.strong(opponent);
-    }
     player.attack(opponent);
-
-    console.log(opponent.health);
+  //  $('.ohealth').text(opponent.health);
 
     if (opponent.health > 0){
-
-      var attack_type = _.random (1, 2);
-
-      //switch (attack_type){
-        //case 1: opponent.attack(player);
-        //case 2: opponent.strong(player);
-      //}
-
+      opponent.attack(player);
       $('.ohealth').text(opponent.health);
       } else if (opponent.health <=0){
       $('.ohealth').text('0');
@@ -178,7 +162,7 @@ $('.button_area button').on('click', function(event){
 
     var health = _.random(1,2);
 
-    //console.log(player.health);
+    console.log(player.health);
     //console.log(opponent.health);
 
     if (health === 1){
@@ -189,6 +173,6 @@ $('.button_area button').on('click', function(event){
       $('.ohealth').text(opponent.health);
     }
 
-    //console.log(player.health);
+    console.log(player.health);
     //console.log(opponent.health);
 });
