@@ -132,7 +132,7 @@ h5 {
       width: 20em;
       border-radius:10em;
       line-height: 10em;  //This helps me center the text
-      left: 35%;
+      left: 20%;
       overflow: hidden;
       border: solid .1em black;
     }
@@ -154,6 +154,7 @@ h5 {
     button {
       position: relative;
       top: 100%;
+      @include margin (10em 0 0 0);
       //left: 50%;
       padding: 4em;
       background: linear-gradient(135deg,  $accent2, #444);
@@ -205,7 +206,7 @@ h5 {
       border: solid .1em black;
       border-radius:10em;
       line-height: 10em;  //This helps me center the text
-      left: 35%;
+      left: 20%;
       overflow: hidden;
     }
 
