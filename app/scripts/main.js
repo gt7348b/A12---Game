@@ -43,7 +43,7 @@ var player1 = new Player({
 
 var player2 = new Player({
     name: 'Flight Attendant',
-    avatar: 'http://slowbuddy.com/wp-content/gallery/cartoon-pictures/cartoon_kid_runner.jpg'
+    avatar: 'images/fattendant.jpg'
 });
 
 var player3 = new Player({
@@ -122,12 +122,14 @@ $('.welcome_button button').on('click', function(event){
     $('.container').css('display', 'block');
     $('.welcome_container').css('display', 'none');
   } else {
-    window.alert('Please select both player!');
+    window.alert('Please select both players!');
 
   }
 
 
 });
+
+//This is the fight button action
 
 $('.button_area button').on('click', function(event){
   event.preventDefault();
@@ -154,4 +156,19 @@ $('.button_area button').on('click', function(event){
       $('.bwin').css('display', 'block');
     }
 
+    var health = _.random(1,2);
+
+    console.log(player.health);
+    console.log(opponent.health);
+
+    if (health === 1){
+      player.health = player.health + _.random(5, 10);
+      $('.phealth').text(player.health);
+    } else  if (health === 2){
+      opponent.health = opponent.health + _.random(1, 5);
+      $('.ohealth').text(opponent.health);
+    }
+
+    console.log(player.health);
+    console.log(opponent.health);
 });
