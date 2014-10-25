@@ -9,7 +9,10 @@ var Player = function(options){
   this.pavatar = options.avatar;
   this.health = 100;
   this.attack = function(attackee){
-    attackee.health = attackee.health - _.random(10, 15);
+    attackee.health = attackee.health - _.random(5, 15);
+  };
+  this.strong = function(attackee){
+    attackee.health = attackee.health - _.random(15, 25);
   };
 };
 
@@ -21,6 +24,9 @@ var Opponent = function(options){
   this.health = 100;
   this.attack = function(attackee){
     attackee.health = attackee.health - _.random(5, 20);
+  };
+  this.strong = function(attackee){
+    attackee.health = attackee.health - _.random(15, 25);
   };
 };
 
@@ -138,11 +144,25 @@ $('.welcome_button button').on('click', function(event){
 $('.button_area button').on('click', function(event){
   event.preventDefault();
 
+  var pattack_type = _.random(1, 2);
+  console.log(pattack_type);
+  if (pattack_type === 1){
     player.attack(opponent);
+  } else {
+    player.strong(opponent);
+  }
+
   //  $('.ohealth').text(opponent.health);
 
     if (opponent.health > 0){
-      opponent.attack(player);
+      var oattack_type = _.random(1, 2);
+
+      if (oattack_type === 1){
+        opponent.attack(player);
+      } else {
+        opponent.strong(player);
+      }
+
       $('.ohealth').text(opponent.health);
       } else if (opponent.health <=0){
       $('.ohealth').text('0');
@@ -162,7 +182,7 @@ $('.button_area button').on('click', function(event){
 
     var health = _.random(1,2);
 
-    console.log(player.health);
+    //console.log(player.health);
     //console.log(opponent.health);
 
     if (health === 1){
@@ -173,6 +193,6 @@ $('.button_area button').on('click', function(event){
       $('.ohealth').text(opponent.health);
     }
 
-    console.log(player.health);
+    //console.log(player.health);
     //console.log(opponent.health);
 });
