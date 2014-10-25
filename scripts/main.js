@@ -43,7 +43,7 @@ var player1 = new Player({
 
 var player2 = new Player({
     name: 'Flight Attendant',
-    avatar: 'http://slowbuddy.com/wp-content/gallery/cartoon-pictures/cartoon_kid_runner.jpg'
+    avatar: 'images/fattendant.jpg'
 });
 
 var player3 = new Player({
@@ -88,15 +88,6 @@ $('.welcome_button button').on('click', function(event){
     player = player3;
   }
 
-  $('.pname').prepend(player.pname).find('.phealth').text(player.health);
-
-  pavatar_img = player.pavatar;
-
-  //console.log(pavatar_img);
-
-  $('.pavatar').append(render_pavatar(pavatar_img));
-
-  console.log(player);
 
   opponent = $('#opponent').val();
 
@@ -108,19 +99,37 @@ $('.welcome_button button').on('click', function(event){
     opponent = opponent3;
   }
 
-  $('.oname').prepend(opponent.oname).find('.ohealth').text(opponent.health);
+  if (opponent !== '' && player !== ''){
+    $('.pname').prepend(player.pname).find('.phealth').text(player.health);
 
-  oavatar_img = opponent.oavatar;
-  console.log(oavatar_img);
+    pavatar_img = player.pavatar;
 
-  $('.opavatar').append(render_oavatar(oavatar_img));
+    //console.log(pavatar_img);
 
-  console.log(opponent);
+    $('.pavatar').append(render_pavatar(pavatar_img));
 
-  $('.container').css('display', 'block');
-  $('.welcome_container').css('display', 'none');
+    console.log(player);
+
+    $('.oname').prepend(opponent.oname).find('.ohealth').text(opponent.health);
+
+    oavatar_img = opponent.oavatar;
+    console.log(oavatar_img);
+
+    $('.opavatar').append(render_oavatar(oavatar_img));
+
+    console.log(opponent);
+
+    $('.container').css('display', 'block');
+    $('.welcome_container').css('display', 'none');
+  } else {
+    window.alert('Please select both players!');
+
+  }
+
 
 });
+
+//This is the fight button action
 
 $('.button_area button').on('click', function(event){
   event.preventDefault();
@@ -134,6 +143,7 @@ $('.button_area button').on('click', function(event){
       } else if (opponent.health <=0){
       $('.ohealth').text('0');
       $('.container').css('display', 'none');
+      $('.title_box').css('display', 'none');
       $('.twin').css('display', 'block');
     }
 
@@ -142,7 +152,23 @@ $('.button_area button').on('click', function(event){
     } else {
       $('.phealth').text('0');
       $('.container').css('display', 'none');
+      $('.title_box').css('display', 'none');
       $('.bwin').css('display', 'block');
     }
 
+    var health = _.random(1,2);
+
+    console.log(player.health);
+    console.log(opponent.health);
+
+    if (health === 1){
+      player.health = player.health + _.random(5, 10);
+      $('.phealth').text(player.health);
+    } else  if (health === 2){
+      opponent.health = opponent.health + _.random(1, 5);
+      $('.ohealth').text(opponent.health);
+    }
+
+    console.log(player.health);
+    console.log(opponent.health);
 });
