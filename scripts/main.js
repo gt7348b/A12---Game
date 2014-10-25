@@ -9,7 +9,10 @@ var Player = function(options){
   this.pavatar = options.avatar;
   this.health = 100;
   this.attack = function(attackee){
-    attackee.health = attackee.health - _.random(5, 10);
+    attackee.health = attackee.health - _.random(5, 15);
+  };
+  this.strong = function(attackee){
+    attackee.health = attackee.health - _.random(15, 25);
   };
 };
 
@@ -21,6 +24,9 @@ var Opponent = function(options){
   this.health = 100;
   this.attack = function(attackee){
     attackee.health = attackee.health - _.random(5, 20);
+  };
+  this.strong = function(attackee){
+    attackee.health = attackee.health - _.random(15, 25);
   };
 };
 
@@ -48,7 +54,8 @@ var player2 = new Player({
 
 var player3 = new Player({
     name: 'Server at Joes',
-    avatar: 'https://lh5.googleusercontent.com/-lmK3WLrOxh4/TW1smUNWWhI/AAAAAAAAAd8/CIa8e7Wr1do/s200/waiter.jpg'
+    avatar: 'images/server.jpg'
+    //avatar: 'https://lh5.googleusercontent.com/-lmK3WLrOxh4/TW1smUNWWhI/AAAAAAAAAd8/CIa8e7Wr1do/s200/waiter.jpg'
 });
 
 var opponent1 = new Opponent({
@@ -57,13 +64,16 @@ var opponent1 = new Opponent({
 });
 
 var opponent2 = new Opponent({
-    name: 'Lumberjack',
-    avatar: 'http://1.bp.blogspot.com/_-CWxsJwZq0E/TSsNebqC-PI/AAAAAAAABhc/vziENTxCym8/s1600/BenLumberjack_clr.jpg'
+    //name: 'Lumberjack',
+    //avatar: 'http://1.bp.blogspot.com/_-CWxsJwZq0E/TSsNebqC-PI/AAAAAAAABhc/vziENTxCym8/s1600/BenLumberjack_clr.jpg'
+    name: 'Sailor',
+    avatar: 'images/sailor.jpg'
 });
 
 var opponent3 = new Opponent({
     name: 'Leather Daddy',
-    avatar: 'http://farm1.static.flickr.com/35/73622729_1fb6a7510b_m.jpg'
+    //avatar: 'http://farm1.static.flickr.com/35/73622729_1fb6a7510b_m.jpg'
+    avatar: 'images/daddy.jpg'
 });
 
 
@@ -134,11 +144,25 @@ $('.welcome_button button').on('click', function(event){
 $('.button_area button').on('click', function(event){
   event.preventDefault();
 
+  var pattack_type = _.random(1, 2);
+  console.log(pattack_type);
+  if (pattack_type === 1){
     player.attack(opponent);
+  } else {
+    player.strong(opponent);
+  }
+
   //  $('.ohealth').text(opponent.health);
 
     if (opponent.health > 0){
-      opponent.attack(player);
+      var oattack_type = _.random(1, 2);
+
+      if (oattack_type === 1){
+        opponent.attack(player);
+      } else {
+        opponent.strong(player);
+      }
+
       $('.ohealth').text(opponent.health);
       } else if (opponent.health <=0){
       $('.ohealth').text('0');
@@ -158,8 +182,8 @@ $('.button_area button').on('click', function(event){
 
     var health = _.random(1,2);
 
-    console.log(player.health);
-    console.log(opponent.health);
+    //console.log(player.health);
+    //console.log(opponent.health);
 
     if (health === 1){
       player.health = player.health + _.random(5, 10);
@@ -169,6 +193,6 @@ $('.button_area button').on('click', function(event){
       $('.ohealth').text(opponent.health);
     }
 
-    console.log(player.health);
-    console.log(opponent.health);
+    //console.log(player.health);
+    //console.log(opponent.health);
 });
