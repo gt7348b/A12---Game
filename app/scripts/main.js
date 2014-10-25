@@ -11,6 +11,9 @@ var Player = function(options){
   this.attack = function(attackee){
     attackee.health = attackee.health - _.random(5, 10);
   };
+  this.strong = function(attackee){
+    attackee.health = attackee.health - _.random(10, 20);
+  };
 };
 
 
@@ -22,6 +25,9 @@ var Opponent = function(options){
   this.attack = function(attackee){
     attackee.health = attackee.health - _.random(5, 20);
   };
+  this.strong = function(attackee){
+    attackee.health = attackee.health - _.random(15, 25);
+  };
 };
 
 //This sets up the templates to be used later
@@ -30,7 +36,6 @@ var oavatar_img,
     pavatar_img,
     render_pavatar = _.template($('#player_avatar').html());
     render_oavatar = _.template($('#opponent_avatar').html());
-
 
 
 
@@ -67,12 +72,10 @@ var opponent3 = new Opponent({
 });
 
 
-// This starts the action
+// This selects the players
 
 
 var player, opponent;
-
-
 
 
 $('.welcome_button button').on('click', function(event){
@@ -134,11 +137,28 @@ $('.welcome_button button').on('click', function(event){
 $('.button_area button').on('click', function(event){
   event.preventDefault();
 
+    var pattack_type = _.random (1, 2);
+    console.log(pattack_type);
+    console.log(opponent.health);
+
+    if (pattack_type === 1){
+      player.attack(opponent);
+    } else {
+      player.strong(opponent);
+    }
     player.attack(opponent);
-  //  $('.ohealth').text(opponent.health);
+
+    console.log(opponent.health);
 
     if (opponent.health > 0){
-      opponent.attack(player);
+
+      var attack_type = _.random (1, 2);
+
+      //switch (attack_type){
+        //case 1: opponent.attack(player);
+        //case 2: opponent.strong(player);
+      //}
+
       $('.ohealth').text(opponent.health);
       } else if (opponent.health <=0){
       $('.ohealth').text('0');
@@ -158,8 +178,8 @@ $('.button_area button').on('click', function(event){
 
     var health = _.random(1,2);
 
-    console.log(player.health);
-    console.log(opponent.health);
+    //console.log(player.health);
+    //console.log(opponent.health);
 
     if (health === 1){
       player.health = player.health + _.random(5, 10);
@@ -169,6 +189,6 @@ $('.button_area button').on('click', function(event){
       $('.ohealth').text(opponent.health);
     }
 
-    console.log(player.health);
-    console.log(opponent.health);
+    //console.log(player.health);
+    //console.log(opponent.health);
 });
