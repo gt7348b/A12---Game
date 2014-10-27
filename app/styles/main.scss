@@ -155,23 +155,20 @@ h5 {
       position: relative;
       top: 100%;
       @include margin (10em 0 0 0);
-      //left: 50%;
       padding: 4em;
       background: linear-gradient(135deg,  $accent2, #444);
       border: 1.5em solid $accent;
       border-radius: 100%;
-      box-shadow: 2px 3px 5px transparentize($accent2, .8);
       outline: none;
       color: white;
       font-weight: bold;
-      //transform: translate(-50%, -50%);
       .fa {
         font-size: 4.2vw;
         color: $accent;
         transition: all .35s ease;
       }
       &:hover {
-        background: linear-gradient(135deg,  #ff2247, #1e3f9f);
+        background: red;
         border-color: white;
         & .fa {
           color: white;
