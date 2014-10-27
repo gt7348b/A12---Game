@@ -23,7 +23,7 @@ var Opponent = function(options){
   this.oavatar = options.avatar;
   this.health = 100;
   this.attack = function(attackee){
-    attackee.health = attackee.health - _.random(5, 20);
+    attackee.health = attackee.health - _.random(5, 10);
   };
   this.strong = function(attackee){
     attackee.health = attackee.health - _.random(15, 25);
@@ -59,14 +59,16 @@ var player3 = new Player({
 });
 
 var opponent1 = new Opponent({
-    name: 'Bar Tender',
-    avatar: 'http://fasab.files.wordpress.com/2013/01/cartoon-otter.gif'
+    name: 'Construction Worker',
+    //avatar: 'http://fasab.files.wordpress.com/2013/01/cartoon-otter.gif'
+    avatar: 'images/construction.jpg'
 });
 
 var opponent2 = new Opponent({
     //name: 'Lumberjack',
-    //avatar: 'http://1.bp.blogspot.com/_-CWxsJwZq0E/TSsNebqC-PI/AAAAAAAABhc/vziENTxCym8/s1600/BenLumberjack_clr.jpg'
     name: 'Sailor',
+    //avatar: 'http://1.bp.blogspot.com/_-CWxsJwZq0E/TSsNebqC-PI/AAAAAAAABhc/vziENTxCym8/s1600/BenLumberjack_clr.jpg'
+
     avatar: 'images/sailor.jpg'
 });
 
